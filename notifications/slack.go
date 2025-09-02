@@ -77,6 +77,10 @@ func (s *SlackNotifier) Notify(message string) error {
 			displayName: "Finalizing Partially Failed",
 			color:       "#FFFF00", // Yellow for finalizing partially failed state
 		},
+		"waitingforpluginoperations": {
+			displayName: "Waiting For Plugin Operations",
+			color:       "#FFFF00", // Yellow for Waiting For Plugin Operations state
+		},		
 		"finalizing": {
 			displayName: "Finalizing",
 			color:       "#025A13", // Dark green for finalizing state
@@ -99,6 +103,8 @@ func (s *SlackNotifier) Notify(message string) error {
 		backupStatus = "partiallyfailed"
 	case strings.Contains(lowerMsg, "finished with status: finalizingpartiallyfailed"):
 		backupStatus = "finalizingpartiallyfailed"
+	case strings.Contains(lowerMsg, "finished with status: waitingforpluginoperations"):
+		backupStatus = "waitingforpluginoperations"		
 	case strings.Contains(lowerMsg, "finished with status: finalizing"):
 		backupStatus = "finalizing"
 	default:
