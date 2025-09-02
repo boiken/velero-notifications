@@ -46,4 +46,4 @@ jobs:
           push: true
           tags: |
             ghcr.io/bsdigital/velero-notifications:latest
-            ghcr.io/bsdigital/velero-notifications:${{version}}
+            ghcr.io/bsdigital/velero-notifications:${{needs.build.outputs.version}}
