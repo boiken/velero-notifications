@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  DOCKER_IMAGE: ${{ secrets.DOCKER_USERNAME }}/your-repo-name
+  DOCKER_IMAGE: ${{ secrets.DOCKER_USERNAME }}/velero-notifications
   IMAGE_TAG: ${{ github.sha }}
 
 jobs:
